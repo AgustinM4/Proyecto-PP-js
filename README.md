@@ -1,2 +1,3 @@
 # Proyecyo-pp-js
-Primera pre-entrega JS
+Segunda Pre-entrega 24/1
+
