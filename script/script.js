@@ -6,8 +6,6 @@ while(isNaN(contraseñaNueva) || contraseñaNueva === 0){
     contraseñaNueva = Number(prompt("ahora ingrese una contraseña númerica"))
 }
 
-
-
 for(let turno = 1; turno <= 10; turno++){
     let ingresarNombre = prompt("Ingrese su nombre");
     alert(" turno N° "+turno+" nombre: "+ingresarNombre);
@@ -17,12 +15,14 @@ for(let turno = 1; turno <= 10; turno++){
     }
 }
 
-function Turno(nombre, fecha, horario, clinica) {
-        this.nombre = nombre;
+class Turno{
+    constructor(turno, fecha, horario, clinica) {
+        this.turno = turno;
         this.fecha = fecha;
         this.horario  = horario;
         this.clinica = clinica
     }
+}
 
 const turno1 = new Turno("turno otorgado N° 1", "15/6/2023", "11:30 hs", "Clínica Estrada");
 const turno2 = new Turno("turno otorgado N° 2", "15/6/2023", "12:00 hs", "Clinica IMA");
@@ -40,4 +40,7 @@ console.log(turno5)
 console.log(turno6)
 console.log(turno7)
 
-
+const arrayA = [turno1, turno2, turno3, turno4, turno5, turno6, turno7];
+for (const index = 0 ; index < 7; index++){
+    alert(arrayA[index])
+}
