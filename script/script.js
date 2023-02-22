@@ -1,5 +1,12 @@
+let body = document.body
 let nombreDeUsuario = prompt("Para sacar turno ingrese un nuevo nombre de usuario")
 let contraseñaNueva = Number(prompt("Ahora ingrese una contraseña númerica"))
+let turnos = document.getElementById('titulo')
+let lugarClinica = document.getElementsByClassName('lugarClinica')
+let parrafo = document.createElement("p")
+parrafo.innerHTML = "<h2> Médicina Online</h2>"
+document.body.appendChild(parrafo);
+
 
 while(isNaN(contraseñaNueva) || contraseñaNueva === 0){
     alert("La contraseña debe ser númerica")
@@ -42,11 +49,5 @@ let msj = "";
 
 
 
-// const arrayA = [turno1, turno2, turno3, turno4, turno5, turno6, turno7];
-// for (let index = 0 ; index < 7; index++){
-//     for(let clave in arrayA[index]) {
-//         alert(arrayA[index][clave])
-//     }
-// }
 
 
