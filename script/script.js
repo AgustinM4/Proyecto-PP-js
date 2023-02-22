@@ -16,7 +16,7 @@ for(let turno = 1; turno <= 10; turno++){
 }
 
 class Turno{
-    constructor(turno, fecha, horario, clinica) {
+    constructor(turno, fecha, horario, clinica,) {
         this.turno = turno;
         this.fecha = fecha;
         this.horario  = horario;
@@ -32,15 +32,21 @@ const turno5 = new Turno("turno otorgado N° 5", "15/6/2023", "13:30 hs", "Clín
 const turno6 = new Turno("turno otorgado N° 6", "15/6/2023", "14:00 hs", "Clinica IMA");
 const turno7 = new Turno("Turno otorgado N° 7", "15/6/2023", "14:30 hs", "Clínica Estrada");
 
-console.log(turno1)
-console.log(turno2)
-console.log(turno3)
-console.log(turno4)
-console.log(turno5)
-console.log(turno6)
-console.log(turno7)
-
 const arrayA = [turno1, turno2, turno3, turno4, turno5, turno6, turno7];
-for (const index = 0 ; index < 7; index++){
-    alert(arrayA[index])
-}
+let msj = "";
+	for (let index = 0; index < 7; index++) {
+    msj += `Turno ${index + 1} asignado en la ${arrayA[index].clinica} el dia ${arrayA[index].fecha} a las ${arrayA[index].horario}\n`;
+    // msj += `Turno ${index + 1} asignado a ${arrayA[index].paciente} en la ${arrayA[index].clinica} el dia ${arrayA[index].fecha} a las ${arrayA[index].horario}\n`;
+	}
+	alert(msj);
+
+
+
+// const arrayA = [turno1, turno2, turno3, turno4, turno5, turno6, turno7];
+// for (let index = 0 ; index < 7; index++){
+//     for(let clave in arrayA[index]) {
+//         alert(arrayA[index][clave])
+//     }
+// }
+
+
