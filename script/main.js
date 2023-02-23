@@ -1,4 +1,4 @@
-const categorias = ['CLINICA', 'FECHA', 'HORA', 'POSTRES'];
+const categorias = ['CLINICA', 'FECHA', 'HORA',];
 
 const opcionesTurno = [];
 
@@ -29,17 +29,14 @@ opcionesTurno.push(new selectTurno(1, 'Clínica IMA', 500, categorias[0]));
 opcionesTurno.push(new selectTurno(2, 'Clínica Estrada', 500, categorias[0]));
 opcionesTurno.push(new selectTurno(3, '15/6/2023', 2000, categorias[1]));
 opcionesTurno.push(new selectTurno(4, '16/6/2023', 2000, categorias[1]));
-opcionesTurno.push(new selectTurno(3, '17/8/2023', 2000, categorias[1]));
-opcionesTurno.push(new selectTurno(4, '18/9/2023', 2000, categorias[1]));
-opcionesTurno.push(new selectTurno(5, '16:30 Hs', 200, categorias[2]));
-opcionesTurno.push(new selectTurno(6, '17:00 Hs', 300, categorias[2]));
-opcionesTurno.push(new selectTurno(5, '18:30 Hs', 200, categorias[2]));
-opcionesTurno.push(new selectTurno(6, '19:00 Hs', 300, categorias[2]));
-opcionesTurno.push(new selectTurno(5, '19:30 Hs', 200, categorias[2]));
-opcionesTurno.push(new selectTurno(6, '20:00 Hs', 300, categorias[2]));
-opcionesTurno.push(new selectTurno(7, 'FLAN', 500, categorias[3]));
-opcionesTurno.push(new selectTurno(8, 'HELADO', 500, categorias[3]));
-
+opcionesTurno.push(new selectTurno(5, '17/8/2023', 2000, categorias[1]));
+opcionesTurno.push(new selectTurno(6, '18/9/2023', 2000, categorias[1]));
+opcionesTurno.push(new selectTurno(7, '16:30 Hs', 200, categorias[2]));
+opcionesTurno.push(new selectTurno(8, '17:00 Hs', 300, categorias[2]));
+opcionesTurno.push(new selectTurno(9, '18:30 Hs', 200, categorias[2]));
+opcionesTurno.push(new selectTurno(10, '19:00 Hs', 300, categorias[2]));
+opcionesTurno.push(new selectTurno(11, '19:30 Hs', 200, categorias[2]));
+opcionesTurno.push(new selectTurno(12, '20:00 Hs', 300, categorias[2]));
 
 // Funciones para obtener datos del form
 
@@ -87,11 +84,10 @@ function obtenerDato(id) {
 }
 
 function obtenerPedido() {
-    const pedido = [obtenerDato('clinica'),
-    obtenerDato('fecha'),
-    obtenerDato('postre'),
+    const datosTurno = [obtenerDato('clinica'),
+    obtenerDato('fecha'),,
     obtenerDato('horario')];
-    return pedido;
+    return datosTurno;
 }
 
 function crearPedido() {
@@ -139,21 +135,6 @@ pedidoForm.onclick = () => {
         },
     }).showToast();
 
-}
-
-function mostrar() {
-    document.getElementById('resumen').style.display = 'block';
-}
-
-let evento = document.getElementById('evento');
-evento.onclick = () => {
-    mostrar()
-}
-
-let refresh = document.getElementById("refresh");
-
-refresh.onclick = () => {
-    location.reload()
 }
 
 // Fetch

@@ -15,14 +15,6 @@ for (let item of OpcionesFecha) {
     select.innerHTML += `<option>${item.nombre}</option>`
 }
 
-const productosPostre = opcionesTurno.filter(turno => turno.categoria == 'POSTRES');
-
-for (let item of productosPostre) {
-
-    let select = document.getElementById('postre')
-    select.innerHTML += `<option>${item.nombre}</option>`
-}
-
 const opcionesHorario = opcionesTurno.filter(turno => turno.categoria == 'HORA');
 
 for (let item of opcionesHorario) {
