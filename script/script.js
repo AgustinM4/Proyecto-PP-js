@@ -41,11 +41,11 @@ const turno7 = new Turno("Turno otorgado N° 7", "15/6/2023", "14:30 hs", "Clín
 
 const arrayA = [turno1, turno2, turno3, turno4, turno5, turno6, turno7];
 let msj = "";
-	for (let index = 0; index < 7; index++) {
-    msj += `Turno ${index + 1} asignado en la ${arrayA[index].clinica} el dia ${arrayA[index].fecha} a las ${arrayA[index].horario}\n`;
-    // msj += `Turno ${index + 1} asignado a ${arrayA[index].paciente} en la ${arrayA[index].clinica} el dia ${arrayA[index].fecha} a las ${arrayA[index].horario}\n`;
-	}
-	alert(msj);
+for (let index = 0; index < 7; index++) {
+msj += `Turno ${index + 1} asignado en la ${arrayA[index].clinica} el dia ${arrayA[index].fecha} a las ${arrayA[index].horario}\n`;
+// msj += `Turno ${index + 1} asignado a ${arrayA[index].paciente} en la ${arrayA[index].clinica} el dia ${arrayA[index].fecha} a las ${arrayA[index].horario}\n`;
+}
+alert(msj);
 
 
 
