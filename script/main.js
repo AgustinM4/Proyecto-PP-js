@@ -24,19 +24,18 @@ class Turno {
     }
 }
 
-
 opcionesTurno.push(new selectTurno(1, 'Clínica IMA', 500, categorias[0]));
 opcionesTurno.push(new selectTurno(2, 'Clínica Estrada', 500, categorias[0]));
-opcionesTurno.push(new selectTurno(3, '15/6/2023', 2000, categorias[1]));
-opcionesTurno.push(new selectTurno(4, '16/6/2023', 2000, categorias[1]));
-opcionesTurno.push(new selectTurno(5, '17/8/2023', 2000, categorias[1]));
-opcionesTurno.push(new selectTurno(6, '18/9/2023', 2000, categorias[1]));
-opcionesTurno.push(new selectTurno(7, '16:30 Hs', 200, categorias[2]));
-opcionesTurno.push(new selectTurno(8, '17:00 Hs', 300, categorias[2]));
-opcionesTurno.push(new selectTurno(9, '18:30 Hs', 200, categorias[2]));
-opcionesTurno.push(new selectTurno(10, '19:00 Hs', 300, categorias[2]));
-opcionesTurno.push(new selectTurno(11, '19:30 Hs', 200, categorias[2]));
-opcionesTurno.push(new selectTurno(12, '20:00 Hs', 300, categorias[2]));
+opcionesTurno.push(new selectTurno(3, '15/6/2023', 500, categorias[1]));
+opcionesTurno.push(new selectTurno(4, '16/6/2023', 500, categorias[1]));
+opcionesTurno.push(new selectTurno(5, '17/8/2023', 500, categorias[1]));
+opcionesTurno.push(new selectTurno(6, '18/9/2023', 500, categorias[1]));
+opcionesTurno.push(new selectTurno(7, '16:30 Hs', 500, categorias[2]));
+opcionesTurno.push(new selectTurno(8, '17:00 Hs', 500, categorias[2]));
+opcionesTurno.push(new selectTurno(9, '18:30 Hs', 500, categorias[2]));
+opcionesTurno.push(new selectTurno(10, '19:00 Hs', 500, categorias[2]));
+opcionesTurno.push(new selectTurno(11, '19:30 Hs', 500, categorias[2]));
+opcionesTurno.push(new selectTurno(12, '20:00 Hs', 500, categorias[2]));
 
 // Funciones para obtener datos del form
 
