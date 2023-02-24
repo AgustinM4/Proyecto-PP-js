@@ -1,4 +1,4 @@
-const categorias = ['CLINICA', 'FECHA', 'HORA',];
+const categorias = ['CLINICA', 'FECHA', 'HORA'];
 
 const opcionesTurno = [];
 
@@ -9,16 +9,16 @@ class selectTurno {
     constructor(id, nombre, precio, categoria) {
         this.id = parseInt(id);
         this.nombre = nombre;
-        this.precio = parseFloat(precio);
+        this.precio = parseInt(precio);
         this.categoria = categoria;
     }
 }
 
 class Turno {
-    constructor(id, nombre, cubiertos, orden, total) {
+    constructor(id, nombre, DNI, orden, total) {
         this.id = parseInt(id);
         this.nombre = nombre;
-        this.cubiertos = parseInt(cubiertos);
+        this.DNI = parseInt(DNI);
         this.orden = orden; //array productos pedidos!
         this.total = this.orden.reduce((sum, item) => sum + item.precio, 0);
     }
@@ -45,8 +45,8 @@ function obtenerNombre() {
     return obtenerN;
 }
 
-function obtenerCubiertos() {
-    let obtenerC = document.getElementById('ingresoCubiertos').value;
+function obtenerDNI() {
+    let obtenerC = document.getElementById('ingresoDNI').value;
     return obtenerC;
 }
 
@@ -83,15 +83,15 @@ function obtenerDato(id) {
     return opcionesTurno.find(item => item.nombre == dato);
 }
 
-function obtenerPedido() {
+function obtenerTurno() {
     const datosTurno = [obtenerDato('clinica'),
     obtenerDato('fecha'),,
     obtenerDato('horario')];
     return datosTurno;
 }
 
-function crearPedido() {
-    let pedido = new Turno(turnos.length , obtenerNombre(), obtenerCubiertos(), obtenerPedido())
+function crearTurno() {
+    let pedido = new Turno(turnos.length , obtenerNombre(), obtenerDNI(), obtenerTurno())
     turnos.push(pedido);
 
     let pedidoStorage = JSON.parse(localStorage.getItem('comandas')) || [];
@@ -112,20 +112,37 @@ function crearPedido() {
 
 
     let divReporte = document.getElementById('pedir')
-    divReporte.innerHTML = `<div>Usted ha ordenado: <ul>${listaOrden}</ul>
-                            <span class="total">El total a pagar es: $${pedido.total}</span>
-                            </div>`
-
-    console.log("pedido: ", pedido);
-    console.log("pedidos: ", turnos);
+    divReporte.innerHTML = `<div>DATOS DE SU TURNO: <ul>${listaOrden}</ul></div>`
 }
 
 let pedidoForm = document.getElementById("pedirComanda");
 
 pedidoForm.onclick = () => {
-    crearPedido();
+    crearTurno();
     Toastify({
         text: `Turno reservado`,
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+            background: "linear-gradient(to right, #9b8b3e, #088200)",
+        },
+    }).showToast();
+
+}
+
+function recogerDatos() {
+    let DNI = document.getElementById('ingresoDNI').value;
+
+    let cubArray = JSON.parse(localStorage.getItem("personaDNI")) || [];
+    cubArray.push(DNI);
+    let cubArrayJSON = JSON.stringify(cubArray);
+
+    localStorage.setItem("personaDNI", cubArrayJSON) || [];
+
+
+    Toastify({
+        text: `DNI Ingresado : ${DNI}`,
         duration: 3000,
         gravity: 'top',
         position: 'right',
@@ -135,8 +152,16 @@ pedidoForm.onclick = () => {
         },
     }).showToast();
 
+    let reporteTitulo = document.getElementById('titulo')
+    reporteTitulo.innerHTML = `<h3>DNI N°: ${DNI}</h3>`
+
 }
 
+let dniForm = document.getElementById("submitDNI");
+
+dniForm.onclick = () => {
+    recogerDatos()
+}
 // Fetch
 
 let url = 'http://api.weatherapi.com/v1/current.json?key=23fc3ba8bf934f2d8f8195549221103&q=Ushuaia&aqi=no';
