@@ -9,7 +9,7 @@ class selectTurno {
     constructor(id, nombre, precio, categoria) {
         this.id = parseInt(id);
         this.nombre = nombre;
-        this.precio = parseInt(precio);
+        this.precio = parseFloat(precio);
         this.categoria = categoria;
     }
 }
