@@ -6,10 +6,10 @@ const turnos = [];
 
 
 class selectTurno {
-    constructor(id, nombre, precio, categoria) {
+    constructor(id, nombre, consulta, categoria) {
         this.id = parseInt(id);
         this.nombre = nombre;
-        this.precio = parseFloat(precio);
+        this.consulta = consulta;
         this.categoria = categoria;
     }
 }
@@ -160,6 +160,8 @@ let dniForm = document.getElementById("submitDNI");
 dniForm.onclick = () => {
     recogerDatos()
 }
+
+
 // Fetch
 
 // let url = 'http://api.weatherapi.com/v1/current.json?key=23fc3ba8bf934f2d8f8195549221103&q=Ushuaia&aqi=no';
