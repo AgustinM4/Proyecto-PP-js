@@ -57,7 +57,7 @@ function toastiNombre() {
     let nombreToasti = document.getElementById('ingresoNombre').value;
 
     Toastify({
-        text: `Bienvenidx ${nombreToasti}!`,
+        text: `Bienvenido/a ${nombreToasti}!`,
         duration: 3000,
         gravity: 'top',
         position: 'right',
