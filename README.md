@@ -1,4 +1,4 @@
-# Proyecyo-pp-js
+# ProjectoJS
 Proyecto final - Entrega
 Simulador turnero
 
