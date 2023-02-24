@@ -130,17 +130,4 @@ dniForm.onclick = () => {
 }
 
 
-// Fetch
-
-// let url = 'http://api.weatherapi.com/v1/current.json?key=23fc3ba8bf934f2d8f8195549221103&q=Ushuaia&aqi=no';
-// fetch(url)
-//     .then(response => response.json())
-//     .then(data => mostrarData(data))
-//     .catch(error => console.log(error))
-
-// const mostrarData = (data) => {
-//     console.log(data)
-//     document.getElementById('wx').innerHTML = `<p>Actualmente la temperatura en la ciudad de Ushuaia es de ${data.current.temp_c}º</p><p>La velocidad del viento es de ${data.current.wind_kph}km/h y proviene de los ${data.current.wind_degree}º</p><img src=${data.current.condition.icon}>`;
-
-// }
 
