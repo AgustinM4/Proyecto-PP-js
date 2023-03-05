@@ -129,20 +129,24 @@ dniForm.onclick = () => {
     recogerDatos()
 }
 
-const lista = document.querySelector('#listado')
+const lista = document.querySelector("#listado")
 
-fetch('https://api.fabianjanuszewski.com/34165/item', {
-        method: 'POST',
-        body: JSON.stringify({
-            itemId: '300',
-            student: "Agustin",
-            direccionIma: "Flores de Estrada 5248, Remedios de Escalada",
+fetch("/script/data.json")
+    .then( (res) => res.json())
+    .then( (data) => {
+
+        data.forEach((producto) => {
+            const li = document.createElement("li")
+            li.innerHTML = `
+            <p>La dirección de la clinica ${producto.nombre} es ${producto.direccion}</p>
+            <hr/>
+            `
+        lista.append(li)
         })
     })
+
+    fetch("/script/data.json")
     .then((response) => response.json())
     .then((data) => console.log(data))
 
-    fetch('https://api.fabianjanuszewski.com/34165/item/300')
-    .then((response) => response.json())
-    .then((data) => console.log(data))
     
