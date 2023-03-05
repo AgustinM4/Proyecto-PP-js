@@ -138,7 +138,7 @@ fetch("/script/data.json")
         data.forEach((producto) => {
             const li = document.createElement("li")
             li.innerHTML = `
-            <p>La dirección de la clinica ${producto.nombre} es ${producto.direccion}</p>
+            <p>La dirección de la clinica ${producto.nombre} es ${producto.direccion}.</p>
             <hr/>
             `
         lista.append(li)
